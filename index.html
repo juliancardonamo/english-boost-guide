@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your English Boost Guide</title>
+<style>
+:root{--ink:#172033;--muted:#697386;--line:#e5e8ee;--soft:#f5f7fb;--accent:#4169e1;--green:#2f7d61}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff}
+.container{max-width:1180px;margin:auto;padding:0 28px}.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:900;letter-spacing:-.03em}.brand span{color:var(--accent)}nav a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:700;margin-left:22px}
+.hero{padding:75px 0 90px;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:900;color:var(--accent);margin-bottom:14px}
+h1{font-size:clamp(46px,7vw,82px);line-height:.96;letter-spacing:-.065em;margin:0}h2{font-size:32px;letter-spacing:-.04em;margin:0 0 12px}
+.hero p{font-size:17px;line-height:1.65;color:var(--muted);max-width:620px;margin:22px 0}.owner{font-size:12px;font-weight:800;color:var(--muted)}.owner strong{color:var(--ink)}
+.heroCard{background:var(--ink);color:#fff;border-radius:28px;padding:30px}.heroCard h2{font-size:22px}.cycle{display:grid;grid-template-columns:1fr 1fr;gap:10px}.cycle div{padding:18px;border:1px solid #39455c;border-radius:16px}.cycle b{display:block}.cycle span{font-size:11px;color:#b9c2d2;display:block;margin-top:5px}
+section{padding:70px 0;scroll-margin-top:40px}.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}.sectionHead p{font-size:13px;color:var(--muted);max-width:450px;line-height:1.5}
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.skill{border:1px solid var(--line);border-radius:22px;padding:22px;min-height:195px;cursor:pointer;transition:.18s;background:#fff}.skill:hover{transform:translateY(-3px);border-color:#b9c3da}.skill .num{font-size:11px;font-weight:900;color:var(--accent)}.emoji{font-size:30px;margin:25px 0 14px}.skill h3{margin:0;font-size:18px}.skill p{color:var(--muted);font-size:12px}
+.detail{display:none;margin-top:14px;border:1px solid var(--line);border-radius:24px;padding:28px;background:var(--soft)}.detail.active{display:block}.detailTop{display:flex;justify-content:space-between;gap:20px}.detail h3{font-size:27px;margin:0}.close{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 12px;cursor:pointer}.detailGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;margin-top:20px}.detail p,.detail li{font-size:13px;line-height:1.65;color:var(--muted)}.resourceBtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.resourceBtns a{display:inline-flex;align-items:center;min-height:44px;padding:9px 14px;border-radius:11px;background:var(--accent);color:#fff;text-decoration:none;font-size:12px;font-weight:800}.resourceBtns a.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}.callout{padding:16px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:12px;line-height:1.55}
+.routine{background:var(--soft);border-radius:28px;padding:32px}.routineGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.routineItem{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px}.time{font-size:11px;font-weight:900;color:var(--accent);text-transform:uppercase}.routineItem h3{font-size:17px;margin:9px 0 6px}.routineItem p{font-size:12px;color:var(--muted);line-height:1.5;margin:0}
+.weekBox{border:1px solid var(--line);border-radius:24px;padding:25px}.weekTop{display:flex;justify-content:space-between;gap:20px;align-items:center}.count{font-size:30px;font-weight:900}.bar{height:9px;background:#e8ebf1;border-radius:999px;overflow:hidden;margin:15px 0 20px}.bar div{height:100%;width:0;background:var(--accent);transition:.25s}.checks{display:grid;grid-template-columns:1fr 1fr;gap:9px}.checks label{display:flex;gap:10px;padding:13px;border:1px solid var(--line);border-radius:13px;font-size:12px;cursor:pointer}.checks input{accent-color:var(--accent)}.checks label.done{background:#edf8f3;border-color:#cce8db;color:#547366;text-decoration:line-through}
+.bank{margin-top:25px;background:var(--ink);color:#fff;border-radius:24px;padding:26px}.bank p{font-size:12px;color:#bdc6d5}.bankForm{display:flex;gap:8px}.bankForm input{flex:1;background:#101827;border:1px solid #43506a;color:#fff;border-radius:11px;padding:11px;font-size:12px}.bankForm button{border:0;border-radius:11px;background:#fff;color:var(--ink);font-weight:900;padding:0 16px;cursor:pointer;min-height:44px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.tag{padding:6px 9px;border:1px solid #43506a;border-radius:999px;font-size:11px;background:#293348}
+.golden{text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:65px 20px}.golden p{max-width:600px;margin:14px auto;color:var(--muted);font-size:14px;line-height:1.6}.formula{font-weight:900;color:var(--accent);margin-top:20px;letter-spacing:.05em}
+footer{text-align:center;color:var(--muted);font-size:11px;padding:35px 0 45px}footer strong{color:var(--ink)}
+@media(max-width:850px){.hero{grid-template-columns:1fr;gap:30px}.skills{grid-template-columns:1fr 1fr}.detailGrid,.routineGrid{grid-template-columns:1fr}.checks{grid-template-columns:1fr}}
+@media(max-width:520px){.container{padding:0 16px}.navlinks{display:none}.skills{grid-template-columns:1fr}.hero{padding:50px 0 60px}.weekTop{flex-direction:column;align-items:flex-start}.cycle{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+<nav class="nav"><div class="brand">ENGLISH <span>BOOST</span> 🚀</div><div class="navlinks"><a href="#skills">Skills</a><a href="#routine">30-Min Routine</a><a href="#weekly">Weekly Challenge</a></div></nav>
+
+<header class="hero">
+<div><div class="eyebrow">Your personal English practice guide</div><h1>Make English part of your everyday life.</h1><p>Small habits. Real English. Consistent practice. Keep listening, speaking, reading and using English outside the classroom.</p><div class="owner">Created &amp; owned by <strong>Licenciado Julian A Cardona Moreno</strong></div></div>
+<div class="heroCard"><h2>Your English cycle</h2><div class="cycle"><div><b>👂 Listen</b><span>Train your ears every day.</span></div><div><b>🗣️ Speak</b><span>Communicate without waiting for perfection.</span></div><div><b>📖 Read</b><span>Consume real English.</span></div><div><b>🧩 Use</b><span>Turn expressions into active language.</span></div></div></div>
+</header>
+
+<section id="skills"><div class="sectionHead"><div><div class="eyebrow">01 · Your toolkit</div><h2>Choose a skill to begin</h2></div><p>Click any card to open the instructions, practice strategy and direct resource links.</p></div>
+<div class="skills">
+<article class="skill" data-detail="listening"><div class="num">01</div><div class="emoji">👂</div><h3>Listening</h3><p>Radio Garden · every morning</p></article>
+<article class="skill" data-detail="speaking"><div class="num">02</div><div class="emoji">🗣️</div><h3>Speaking</h3><p>ChatGPT + Episoden · 2–4× weekly</p></article>
+<article class="skill" data-detail="natural"><div class="num">03</div><div class="emoji">🎬</div><h3>Natural English</h3><p>PlayPhrase · 3× weekly</p></article>
+<article class="skill" data-detail="reading"><div class="num">04</div><div class="emoji">📖</div><h3>Reading</h3><p>Guardian + NYT · daily</p></article>
+</div>
+
+<div id="listening" class="detail"><div class="detailTop"><div><div class="eyebrow">Listening</div><h3>Train your ears every day.</h3></div><button class="close">Close</button></div><div class="detailGrid"><div><p><b>Your challenge:</b> Listen for 10–15 minutes every morning. Choose an English-speaking city and listen while you have breakfast, get ready, commute, exercise or prepare for work.</p><ul><li>Focus on the general topic.</li><li>Notice words and expressions you recognize.</li><li>Listen for repeated expressions.</li><li>Don't translate everything.</li></ul><div class="resourceBtns"><a href="https://radio.garden/" target="_blank">Open Radio Garden ↗</a></div></div><div class="callout">🎯 <b>Goal:</b> Understand the message, not every single word.</div></div></div>
+
+<div id="speaking" class="detail"><div class="detailTop"><div><div class="eyebrow">Speaking</div><h3>Stop thinking. Start talking.</h3></div><button class="close">Close</button></div><div class="detailGrid"><div><p>Use <b>ChatGPT</b> for regular English conversations and <b>Episoden</b> for real 1-to-1 conversations.</p><ul><li>ChatGPT: 3–4 conversations per week.</li><li>Episoden: 2–3 conversations per week.</li><li>Prepare one opinion, one example and one question.</li><li>Build answers: <b>Answer → Explain → Example → Opinion.</b></li></ul><div class="resourceBtns"><a href="https://chatgpt.com/" target="_blank">Practice with ChatGPT ↗</a><a class="secondary" href="https://www.episoden.com/" target="_blank">Open Episoden ↗</a></div></div><div class="callout">💬 Try: “Let's have a 10-minute conversation in English. Ask me questions about different topics. Don't correct me immediately. At the end, give me feedback on my grammar, vocabulary, fluency, and natural ways to express my ideas.”</div></div></div>
+
+<div id="natural" class="detail"><div class="detailTop"><div><div class="eyebrow">Natural English</div><h3>Learn how people really speak.</h3></div><button class="close">Close</button></div><div class="detailGrid"><div><p>Search for an expression in <b>PlayPhrase</b> and hear how it is used in movie and TV scenes.</p><ul><li>Listen to several examples.</li><li>Notice pronunciation, rhythm and intonation.</li><li>Notice words around the expression.</li><li>Imitate it.</li><li>Create your own sentence.</li></ul><div class="resourceBtns"><a href="https://playphrase.me/" target="_blank">Open PlayPhrase ↗</a></div></div><div class="callout">🧠 <b>3-step method:</b><br>1. LISTEN<br>2. IMITATE<br>3. USE</div></div></div>
+
+<div id="reading" class="detail"><div class="detailTop"><div><div class="eyebrow">Reading</div><h3>Read real English.</h3></div><button class="close">Close</button></div><div class="detailGrid"><div><p>Follow <b>The Guardian</b> and <b>The New York Times</b> on Instagram and choose content that genuinely interests you.</p><ul><li>10–15 minutes a day.</li><li>First reading: identify the main idea without a dictionary.</li><li>Second reading: find vocabulary, expressions, collocations and phrasal verbs.</li><li>Choose 2–3 expressions and create your own sentences.</li></ul><div class="resourceBtns"><a href="https://www.instagram.com/guardian/" target="_blank">The Guardian ↗</a><a class="secondary" href="https://www.instagram.com/nytimes/" target="_blank">The New York Times ↗</a></div></div><div class="callout">🔎 Ask: “Could I use this expression in a conversation?” If yes → save it.</div></div></div>
+</section>
+
+<section id="routine"><div class="routine"><div class="sectionHead"><div><div class="eyebrow">02 · When you're busy</div><h2>The 30-minute minimum</h2></div><p>You don't need hours. Give English 30 focused minutes across your day.</p></div><div class="routineGrid"><div class="routineItem"><div class="time">Morning · 10 min</div><h3>👂 Radio Garden</h3><p>Listen while doing something else. Focus on the general idea.</p></div><div class="routineItem"><div class="time">During the day · 10 min</div><h3>📖 Guardian / NYT</h3><p>Read real content and save 2–3 useful expressions.</p></div><div class="routineItem"><div class="time">Evening · 10 min</div><h3>🗣️ ChatGPT / PlayPhrase</h3><p>Practice using the expressions you discovered that day.</p></div></div></div></section>
+
+<section id="weekly"><div class="sectionHead"><div><div class="eyebrow">03 · Build the habit</div><h2>Your weekly challenge</h2></div><p>Progress comes from consistency, not perfection.</p></div><div class="weekBox"><div class="weekTop"><div><strong>Weekly progress</strong><div class="bar"><div id="progress"></div></div></div><div class="count" id="count">0 / 6</div></div><div class="checks"><label><input type="checkbox"> 7 days of listening</label><label><input type="checkbox"> 3 ChatGPT conversations</label><label><input type="checkbox"> 2 Episoden conversations</label><label><input type="checkbox"> 3 PlayPhrase sessions</label><label><input type="checkbox"> 5 reading sessions</label><label><input type="checkbox"> 10 new expressions used in your own sentences</label></div></div>
+<div class="bank"><div class="eyebrow" style="color:#9fb2ff">04 · Make it yours</div><h2 style="color:#fff;font-size:25px">🧩 Expression Bank</h2><p>Don't just collect words. Collect expressions you can actually use.</p><div class="bankForm"><input id="expression" maxlength="80" placeholder="e.g. overcome a challenge"><button id="save">Save</button></div><div class="tags" id="tags"><span class="tag">face a challenge</span><span class="tag">raise concerns</span><span class="tag">a challenging situation</span></div></div>
+</section>
+
+<div class="golden"><div class="eyebrow">The golden rule</div><h2>A little more than yesterday.</h2><p>You don't need perfect English before you speak. Communicate, notice your mistakes, try again, and keep exposing yourself to English.</p><div class="formula">INPUT + OUTPUT + CONSISTENCY = PROGRESS</div></div>
+<footer>English Boost Guide · Created &amp; owned by <strong>Licenciado Julian A Cardona Moreno</strong></footer>
+</div>
+<script>
+const details=document.querySelectorAll('.detail');
+document.querySelectorAll('.skill').forEach(c=>c.onclick=()=>{details.forEach(d=>d.classList.remove('active'));const d=document.getElementById(c.dataset.detail);d.classList.add('active');d.scrollIntoView({behavior:'smooth',block:'nearest'})});
+document.querySelectorAll('.close').forEach(b=>b.onclick=()=>b.closest('.detail').classList.remove('active'));
+const boxes=[...document.querySelectorAll('.checks input')],bar=document.getElementById('progress'),count=document.getElementById('count');
+function update(){let n=boxes.filter(x=>x.checked).length;count.textContent=n+' / '+boxes.length;bar.style.width=n/boxes.length*100+'%';boxes.forEach(x=>x.closest('label').classList.toggle('done',x.checked))}
+boxes.forEach(x=>x.onchange=update);update();
+const input=document.getElementById('expression'),save=document.getElementById('save'),tags=document.getElementById('tags');
+function add(){let v=input.value.trim();if(!v)return;let s=document.createElement('span');s.className='tag';s.textContent=v;tags.appendChild(s);input.value='';input.focus()}
+save.onclick=add;input.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();add()}};
+</script>
+</body>
+</html>
